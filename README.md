@@ -1,6 +1,8 @@
 # Тестовое задание от Equite
 ## Стек NextJs, Typescript, MaterialUI
 
+## Live Demo - https://equite-test-1h0pnhlj0-daulet070.vercel.app/
+
 Задача: сделать готовую страницу, используя NextJs, Typescript, MaterialUI
 
 ### Макет: 
