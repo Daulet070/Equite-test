@@ -60,12 +60,9 @@ const ModalForm = () => {
               <h2 id="transition-modal-title">Добро пожадовать!</h2>
             </Box>
             <Box>
-                
+              <p id="transition-modal-description">Сдесь будет форма</p>
             </Box>
-            <Box>
-
-            </Box>
-            <p id="transition-modal-description">animates me.</p>
+            <Box></Box>
           </Box>
         </Fade>
       </Modal>
