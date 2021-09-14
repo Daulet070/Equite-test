@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider, Theme } from '@mui/material/styles';
 import { CacheProvider, EmotionCache } from '@emotion/react';
+import Container from '@mui/material/Container';
 
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
+import Layout from '../components/Layout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -23,6 +25,7 @@ interface MyAppProps extends AppProps {
 
 const MyApp = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  // const getLayout = Component.getLayout || ((page) => page);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -45,7 +48,11 @@ const MyApp = (props: MyAppProps) => {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <Layout>
+          <Container maxWidth="lg">
+            <Component {...pageProps} />
+          </Container>
+        </Layout>
       </ThemeProvider>
     </CacheProvider>
   );
